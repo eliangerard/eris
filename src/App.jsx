@@ -35,7 +35,7 @@ function App() {
 
   const sendMessage = async (value) => {
     console.log(value, inputValue);
-    const response = await fetch('http://172.16.17.106:3000/compliant', {
+    const response = await fetch('https://eris-back-dev-sans.2.us-1.fl0.io/compliant', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
