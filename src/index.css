@@ -232,11 +232,17 @@ h2 {
   text-align: center;
 }
 
-
+.optionContainer {
+  flex-direction: row;
+}
 
 @media (max-width: 800px) {
   main {
     max-width: none;
     width: calc(100% - 2rem);
+  }
+
+  .optionContainer {
+    flex-direction: column;
   }
 }

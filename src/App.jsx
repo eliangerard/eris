@@ -73,7 +73,10 @@ function App() {
 
       setIdea("Idea: " + inputValue);
 
-      setMessages([{ role: 'user', content: inputValue }, { role: 'assistant', content: 'Estamos analizando tu idea, por favor escribe los valores y criterios que la rigen' }]);
+      setTimeout(() => {
+        setMessages([{ role: 'user', content: inputValue }, { role: 'assistant', content: 'Estoy analizando tu idea, por favor escribe los valores y criterios que la rigen.' }]);
+      }, 1000);
+
       setWaitingForValues(true);
       setInputValue('');
       return;
@@ -180,7 +183,7 @@ function App() {
                 flexDirection: 'column',
                 alignItems: 'center',
               }}>
-                <div style={{
+                <div className='optionContainer' style={{
                   display: 'flex',
                   justifyContent: 'space-around',
                   margin: '1rem 0',
