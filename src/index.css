@@ -1,0 +1,242 @@
+:root {
+  --accent: #1b4af0;
+  --dark-accent: #173397;
+  --prompt-border: rgba(231, 236, 254, 0.60);
+  --prompt-background: linear-gradient(128deg, rgba(88, 195, 255, 0.24) 6.4%, rgba(129, 202, 255, 0.04) 99.16%);
+  --prompt-shadow: rgba(8, 27, 97, 0.40);
+  --prompt-outline: rgba(27, 53, 145, 0.6);
+  --eris-background: linear-gradient(128deg, rgba(93, 123, 231, 0.24) 6.4%, rgba(114, 144, 250, 0.16) 99.16%);
+  --eris-border: rgba(92, 115, 195, 0.60);
+  --background-gradient: linear-gradient(180deg, #EEF1FB 1.56%, #F2F2F2 14.69%, #E7EBF9 26.27%, #F9FAFF 38.2%, #FEFEFF 76.62%, #D9DEEF 100%);
+  --circle: radial-gradient(50% 50% at 50% 50%, rgba(6, 60, 252, 0.20) 0%, rgba(73, 109, 235, 0.00) 100%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--prompt-border);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--prompt-background);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+
+html {  
+  background: var(--background-gradient);
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+  max-width: 50%;
+  width: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-weight: 900;
+  margin: 0;
+}
+
+.circle {
+  scale: 0.5;
+  height: 800px;
+  width: 800px;
+  position: absolute;
+  top: 13%;
+  right: 2%;
+  border-radius: 840px;
+  background: var(--circle);
+}
+
+.prompt {
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  border-radius: 67px;
+  border: 4px solid var(--prompt-border);
+  background: var(--prompt-background);
+  box-shadow: 1px 3px 8px 3px var(--prompt-shadow);
+  backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: 0px solid var(--prompt-outline);
+}
+
+.prompt input {
+  border: none;
+  width: calc(100% - 2rem);
+  background-color: #00000000;
+  padding: 0.5rem 1rem;
+  font-size: larger;
+}
+
+.prompt input:focus {
+  outline: none;
+
+}
+
+.prompt:focus-within {
+  outline: 4px solid var(--prompt-outline);
+}
+
+.prompt button {
+  width: fit-content;
+  background-color: #00000000;
+  border: none;
+  opacity: 60%;
+}
+
+.prompt button:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.prompt svg {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--accent);
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 18px;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 2px 6px 1px rgba(8, 27, 97, 0.20);
+  width: fit-content;
+  max-width: 17rem;
+}
+
+.message p {
+  font-weight: 500 !important;
+}
+
+.ownMessage {
+  border: 2px solid rgba(231, 236, 254, 0.60);
+  background: linear-gradient(128deg, rgba(243, 245, 255, 0.24) 6.4%, rgba(231, 236, 254, 0.04) 99.16%);
+}
+
+.erisMessage {
+  border: 2px solid var(--eris-border);
+  background: var(--eris-background);
+}
+
+.container {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.container p {
+  margin: 0;
+}
+
+.own {
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.topBlur {
+  background: linear-gradient(180deg, #EEF1FB 10%, rgba(238, 241, 251, 0.28) 32.71%, rgba(238, 241, 251, 0.00) 68.67%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 1;
+}
+.backIcon {
+  height: 30%;
+  fill: var(--accent);
+  margin-right: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 20%;
+}
+
+.buttonConversation {
+  user-select: none;
+}
+
+.buttonConversation:hover {
+  cursor: pointer;
+
+}
+
+#reset:hover {
+  transform: rotate(-360deg);
+  transition: transform 0.2s ease-in-out!important;
+}
+#reset svg {
+  margin: 0;
+  padding: 0;
+  height: 2rem;
+  width: 2rem;
+}
+
+.option {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option:hover {
+  cursor: pointer;
+  outline: 4px solid var(--accent);
+}
+
+.option p {
+  text-align: center;
+}
+
+
+
+@media (max-width: 800px) {
+  main {
+    max-width: none;
+    width: calc(100% - 2rem);
+  }
+}
